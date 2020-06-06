@@ -1,0 +1,39 @@
+{% extends 'base1.html' %}
+{% block content %}
+<table class="table">
+  <thead class="bg-warning">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">ITEMID</th>
+      <th scope="col">ITEM NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">USER NAME</th>
+      <th scope="col">E-MAIL</th>
+      <th scope="col">PH</th>
+      <th scope="col">SIZE</th>
+      <th scope="col">LOCATION</th>
+      <th scope="col">CITY</th>
+      <th scope="col">PINCODE</th>
+    </tr>
+  </thead>
+  {% if itemlist %}
+  {% for i in itemlist %}
+  <tbody>
+    <tr>
+      <th scope="row">{{ i.id }}</th>
+      <td>{{ i.itemid }}</td>
+      <td>{{ i.itemname }}</td>
+      <td>{{ i.price }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.email }}</td>
+      <td>{{ i.ph }}</td>
+      <td>{{ i.size }}</td>
+      <td>{{ i.location }}</td>
+      <td>{{ i.city }}</td>
+      <td>{{ i.pin }}</td>
+    </tr>
+  </tbody>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base1.html' %}
+{% block content %}
+<table class="table">
+  <thead class="bg-warning">
+    <tr>
+      <th scope="col">ITEMID</th>
+      <th scope="col">ITEM NAME</th>
+      <th scope="col">PRICE</th>
+    </tr>
+  </thead>
+  {% if items %}
+  {% for i in items %}
+  <tbody>
+    <tr>
+      <td>{{ i.itemid }}</td>
+      <td>{{ i.itemname }}</td>
+      <td>{{ i.price }}</td>
+    </tr>
+  </tbody>
+{% endfor %}
+{% endif %}
+</table>
+{% endblock %}

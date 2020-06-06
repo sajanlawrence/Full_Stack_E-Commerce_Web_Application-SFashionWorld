@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <center>{{ message }}</center>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+<br>
+<center>
+<p class="h1">ORDER DETAILS</p>
+</center>
+<table class="table">
+  <thead class="bg-warning">
+    <tr>
+      <th scope="col">ITEM ID</th>
+      <th scope="col">ITEM NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">NAME</th>
+      <th scope="col">E-MAIL</th>
+      <th scope="col">PHONE NUMBER</th>
+      <th scope="col">SIZE</th>
+      <th scope="col">LOCATION</th>
+      <th scope="col">CITY</th>
+      <th scope="col">PINCODE</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>{{ buying.itemid }}</td>
+      <td>{{ buying.itemname }}</td>
+      <td>{{ buying.price }}</td>
+      <td>{{ buying.name }}</td>
+      <td>{{ buying.email }}</td>
+      <td>{{ buying.ph }}</td>
+      <td>{{ buying.size }}</td>
+      <td>{{ buying.location }}</td>
+      <td>{{ buying.city }}</td>
+      <td>{{ buying.pin }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div class="jumbotron">
+  <center>
+  <h3><b>Payment Option</b></h3>
+  <h3>Would you like to pay online? If <b>Yes</b> click the button below, else go back to home and continue shopping..</h3></center>
+  {# THIS IS A TEST KEY. TO FIND YOUR OWN KEY, LOG IN TO YOUR STRIPE ACCOUNT
+  THEN GO TO: https://stripe.com/docs/quickstart #}
+  <form action="{{url_for('payment')}}" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key={{public_key}}
+      data-amount="10000"
+      data-name="S Fashion World"
+      data-description="Payment"
+      data-image="https://i.pinimg.com/originals/70/fb/04/70fb048cadfbb02ce5509325a61a5918.png"
+      data-locale="auto"
+      data-zip-code="true">
+    </script>
+  </form>
+</div>
+
+{% endblock %}

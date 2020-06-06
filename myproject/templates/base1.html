@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>S Fashion World</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='base.css')}}">
+<style>
+  .b{
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  .mainhead{
+    font-size: 100px;
+    text-align: center;
+    font-style: oblique;
+    font-family: fantasy;
+    margin-bottom: 0em;
+    color: red;
+  }
+  .subhead{
+    text-align: center;
+    font-size: 80px;
+    font-style: oblique;
+    margin-top: 0em;
+    color:black;
+      font-family: fantasy;
+  }
+</style>
+</head>
+<body>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="nav-link" href="{{ url_for('adminhome') }}">
+    <img src="{{url_for('static',filename='ss.png')}}" width="30" height="30" alt="">
+    <b class="b">Admin Panel</b>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('additem') }}">Add Items <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('view') }}">View Orders <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('removeitem') }}">Remove Order <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('viewitems') }}">View Items <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('logout') }}">Logout <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <h2><b>S Fashion World</b></h2>
+    </form>
+  </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About Me</h6>
+          <p class="text-justify">
+            My name is <b>Sajan Lawrence</b>. I am pursuing my 3rd year B.Tech in Computer Science at Christ College of Engineering, Irinjalakuda. This is my first <b>Flask Web Application</b> project. I have used <b>HTML</b>, <b>CSS</b>, <b>Bootstrap</b> for front end design and <b>Flask( Python framework )</b> for back end . The database I used in this project is <b>Sqlite</b> and my object relational mapper is <b>SQLAlchemy</b>.
+          </p>
+        </div>
+
+        <div class="col-xs-8 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="{{ url_for('additem') }}">Add Items</a></li>
+            <li><a href="{{ url_for('view') }}">View Orders</a></li>
+            <li><a href="{{ url_for('removeitem') }}">Remove Item</a></li>
+              <li><a href="{{ url_for('viewitems') }}">View Items</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          </ul>
+        </div>
+
+<div class="col-xs-6 col-md-3">
+<img src="{{url_for('static',filename='ss.png')}}" width="150" height="150" alt="">
+<ul class="footer-links">
+<li><h5>S Fashion World</h5></li>
+</ul>
+</div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">
+            E-mail : sajanlawrence12345@gmail.com <br>
+            linkedin  : http://linkedin.com/in/sajan-lawrence-9969ba150
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+  </body>
+</body>
+</html>

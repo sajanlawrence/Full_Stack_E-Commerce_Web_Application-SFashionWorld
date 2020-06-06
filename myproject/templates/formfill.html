@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <center>{{ message }}</center>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  {% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+      <form role="form"  method="post">
+        {{ form.csrf }}
+        <center>
+      <h1 color="Black">Fill This Form</h2>
+        </center>
+        <div class="form-row">
+          <div class="form-group col-md-5">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email"> <br>
+          </div>
+          <div class="form-group col-md-2">
+          <label for="itemid">Item ID</label>
+          <input type="text" class="form-control" id="itemid" name="itemid" placeholder="Enter id"> <br>
+          </div>
+        <div class="form-group col-md-3">
+          <label for="size">Size</label>
+          <input type="text" class="form-control" id="size" name="size" placeholder="Enter your size"> <br>
+          </div>
+
+          <div class="form-group col-md-10">
+          <label for="location">Delivery Location</label>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter your location"> <br>
+          </div>
+          <div class="form-group col-md-6">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city"> <br>
+          </div>
+          <div class="form-group col-md-4">
+          <label for="pin">Pincode</label>
+          <input type="text" class="form-control" id="pin" name="pin" placeholder="Enter your pincode"> <br>
+          </div>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+
+      </form>
+
+<br>
+{% endblock %}
