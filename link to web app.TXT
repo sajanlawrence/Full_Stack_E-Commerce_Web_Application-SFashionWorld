@@ -1,0 +1,4 @@
+You can visit my E-commerce web application site uing the following link.
+https://sfashionworldapplication.herokuapp.com/
+admin page login email : admin@gmail.com
+admin page login password : admin
