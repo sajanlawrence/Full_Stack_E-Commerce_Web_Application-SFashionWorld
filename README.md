@@ -1,4 +1,4 @@
-"Full stack Web application project"
+# Full Stack E-Commerce Web Application Project
 
 Link for my project : https://sfashionworldapplication.herokuapp.com/
 This is my first Full Stack Web Application project. I have used HTML, CSS and Bootstrap for front end design and Flask( Python framework ) for back end . The database I used in this project is Postgresql and my object relational mapper is SQLAlchemy.
